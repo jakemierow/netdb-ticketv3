@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticket", "Ticket\Ticket.csproj", "{3BB6EA74-9A91-4516-BB8A-0D0460C4B0F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BB6EA74-9A91-4516-BB8A-0D0460C4B0F9}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{3BB6EA74-9A91-4516-BB8A-0D0460C4B0F9}.Debug|anycpu.Build.0 = Debug|anycpu
+		{3BB6EA74-9A91-4516-BB8A-0D0460C4B0F9}.Release|anycpu.ActiveCfg = Release|anycpu
+		{3BB6EA74-9A91-4516-BB8A-0D0460C4B0F9}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal

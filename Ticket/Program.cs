@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Ticket
 {
@@ -7,11 +9,11 @@ namespace Ticket
     {
         public static void Main(string[] args)
         {
+            List<Ticket> Tickets = new List<Ticket>();
+
             String file = AppDomain.CurrentDomain.BaseDirectory + "Tickets.txt";
             String choice;
             int ticketID;
-            int lastID = 0;
-           
 
          do
             {
@@ -35,6 +37,22 @@ namespace Ticket
                                 "Assigned: {5}, Watching: {6}",
                                 arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
 
+
+                            int readID = Convert.ToInt32(arr[0]);
+
+                            var Ticket = new Ticket()
+                            {
+                                TicketID = readID,
+                                TicketSummary = arr[1],
+                                TicketStatus = arr[2],
+                                TicketPriority = arr[3],
+                                SubmittedBy = arr[4],
+                                AssignedTo = arr[5],
+                                Watching = arr[6]
+                            };
+
+                            Tickets.Add(Ticket);
+
                         }
                         sr.Close();
                     }
@@ -54,8 +72,9 @@ namespace Ticket
                         string resp = Console.ReadLine().ToUpper();
                         // if the response is anything other than "Y", stop asking
                         if (resp != "Y") { break; }
-                        //prompt for ticket ID
-                        ticketID = lastID + 2;
+                    //prompt for ticket ID
+                    int currentID = Tickets.Max(m => m.TicketID);
+                    ticketID = currentID + 1;
                         Console.WriteLine($"Creating new Ticket under Ticket ID {ticketID}");
                         // save ticket ID
                         Console.WriteLine();

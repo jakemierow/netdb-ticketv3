@@ -32,7 +32,18 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ticket.cs" />
+    <Compile Include="FileManager\TicketFile.cs" />
+    <Compile Include="FileManager\EnhancementFile.cs" />
+    <Compile Include="Properties\Enhancement.cs" />
+    <Compile Include="FileManager\TaskFile.cs" />
+    <Compile Include="Type\Bug.cs" />
+    <Compile Include="Type\Ticket.cs" />
+    <Compile Include="Type\Task.cs" />
+    <Compile Include="Type\Enhancement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FileManager\" />
+    <Folder Include="Type\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

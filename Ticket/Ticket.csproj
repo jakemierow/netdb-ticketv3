@@ -44,6 +44,12 @@
   <ItemGroup>
     <Folder Include="FileManager\" />
     <Folder Include="Type\" />
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Enhancements.txt" />
+    <None Include="Data\Tickets.txt" />
+    <None Include="Data\Tasks.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

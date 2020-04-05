@@ -38,16 +38,12 @@ namespace Ticket
 
                 switch(choice)
                 {
-                 case "1":
+                    case "1":
            
                         string input;
-                        do
-                        {
+                        
                             Bug BugTicket = new Bug();
-                            // ask a question
-                            Console.WriteLine("Enter a ticket? (Y/N)");
-                            // input the response
-                            input = Console.ReadLine().ToUpper();
+                           
 
                             // prompt for ticket summary
                             Console.WriteLine("Enter a summary: ");
@@ -86,10 +82,9 @@ namespace Ticket
                             BugTicket.Severity = Console.ReadLine();
 
 
-                            TicketFile.AddTicket(BugTicket);
-
-                        }
-                        while (input != "N");
+                        TicketFile.AddTicket(BugTicket);
+                        Console.WriteLine("Ticket created.");
+                        
                         break;
                  case "2":
                         foreach (Bug b in TicketFile.BugTickets)
@@ -100,11 +95,7 @@ namespace Ticket
                  case "3":
                         Enhancement EnhancementTicket = new Enhancement();
 
-                        // ask a question
-                        Console.WriteLine("Enter a ticket? (Y/N)");
-                        // input the response
-                        input = Console.ReadLine().ToUpper();
-
+                        
                         // prompt for ticket summary
                         Console.WriteLine("Enter a summary: ");
                         // save ticket summary
@@ -157,6 +148,7 @@ namespace Ticket
 
 
                         enhancementFile.AddTicket(EnhancementTicket);
+                        Console.WriteLine("Ticket created.");
                         break;
 
                  case "4":
@@ -169,10 +161,7 @@ namespace Ticket
                  case "5":
                         Task TaskTicket = new Task();
 
-                        // ask a question
-                        Console.WriteLine("Enter a ticket? (Y/N)");
-                        // input the response
-                        input = Console.ReadLine().ToUpper();
+                      
 
                         // prompt for ticket summary
                         Console.WriteLine("Enter a summary: ");
@@ -216,11 +205,7 @@ namespace Ticket
 
 
                         taskFile.AddTicket(TaskTicket);
-                        
-
-
-
-
+                        Console.WriteLine("Ticket created.");
                         break;
 
 

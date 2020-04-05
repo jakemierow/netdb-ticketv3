@@ -52,7 +52,7 @@ namespace Ticket
 
         public void AddTicket(Enhancement EnhancementTicket)
         {
-            EnhancementTicket.TicketID = EnhancementTickets.Max(e => e.TicketID) + 1;
+            EnhancementTicket.TicketID = EnhancementTickets.Count == 0 ? 1 : EnhancementTickets.Max(e => e.TicketID) + 1;
             StreamWriter sw = new StreamWriter(filePath, true);
             sw.WriteLine($"{EnhancementTicket.TicketID},{EnhancementTicket.TicketSummary},{EnhancementTicket.TicketStatus},{EnhancementTicket.TicketPriority}," +
                 $"{EnhancementTicket.SubmittedBy}, {EnhancementTicket.AssignedTo}, {EnhancementTicket.Watching}, {EnhancementTicket.Software}, {EnhancementTicket.Cost}, {EnhancementTicket.Reason}, {EnhancementTicket.Estimate}");

@@ -49,7 +49,7 @@ namespace Ticket.FileManager
 
         public void AddTicket(Bug BugTicket)
         {
-            BugTicket.TicketID = BugTickets.Max(b => b.TicketID) + 1;
+            BugTicket.TicketID = BugTickets.Count == 0 ? 1 : BugTickets.Max(b => b.TicketID) + 1;
             StreamWriter sw = new StreamWriter(filePath, true);
             sw.WriteLine($"{BugTicket.TicketID},{BugTicket.TicketSummary},{BugTicket.TicketStatus},{BugTicket.TicketPriority}," +
                 $"{BugTicket.SubmittedBy}, {BugTicket.AssignedTo}, {BugTicket.Watching}, {BugTicket.Severity}");

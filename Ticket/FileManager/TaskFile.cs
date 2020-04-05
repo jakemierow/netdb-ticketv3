@@ -51,7 +51,7 @@ namespace Ticket
 
         public void AddTicket(Task TaskTicket)
         {
-            TaskTicket.TicketID = TaskTickets.Max(t => t.TicketID) + 1;
+            TaskTicket.TicketID = TaskTickets.Count == 0 ? 1 : TaskTickets.Max(t => t.TicketID) + 1;
             StreamWriter sw = new StreamWriter(filePath, true);
             sw.WriteLine($"{TaskTicket.TicketID},{TaskTicket.TicketSummary},{TaskTicket.TicketStatus},{TaskTicket.TicketPriority}," +
                 $"{TaskTicket.SubmittedBy}, {TaskTicket.AssignedTo}, {TaskTicket.Watching}, {TaskTicket.projectName}, {TaskTicket.DueDate}");
